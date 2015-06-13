@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   get '/items/new' => 'items#new'
   get '/items/:id' => 'items#show'
   get '/items/' => 'items#index'
+  get '/items/:id/edit' => 'items#edit'
   post '/items' =>  'items#create'
-  #   get 'products/:id' => 'catalog#view'
+  patch '/items/:id' =>  'items#update'
+
+  # get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

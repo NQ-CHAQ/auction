@@ -7,6 +7,21 @@ class ItemsController < ApplicationController
   @item = Item.find( params[:id] ) #IDでデータベースを検索した結果を変数へ
   end
 
+ def edit
+  @item = Item.find( params[:id] ) #IDでデータベースを検索した結果を変数へ
+end
+
+def update
+   #idをキーにして再度データベースからデータを取得する
+   @item = Item.find(params[:id])
+
+   # これをストロングパラメータの値で変更箇所のみ上書きする
+   @item.update_attributes(item_pamas)
+
+   # show.html.erbへ飛ばす
+   redirect_to "/items/#{@item.id}"
+end
+
   def new
     @item = Item.new
   end
