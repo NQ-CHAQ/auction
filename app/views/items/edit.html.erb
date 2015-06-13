@@ -1,6 +1,6 @@
 <h1>商品変更フォーム:<%= @item.name %></h1>
 
-<%= form_for @item, url: { action: :update } do |f| %>
+<%= form_for @item, url: { action: :update }  do |f| %>
 <p>商品名：<br>
 <%= f.text_field :name %>
 </p>
